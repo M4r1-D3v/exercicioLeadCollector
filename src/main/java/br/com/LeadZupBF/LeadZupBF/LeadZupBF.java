@@ -10,21 +10,11 @@ import java.util.List;
 public class LeadZupBF {
 
 @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
 private String email;
 private String nome;
 private List<Produto>produtos;
 
     public LeadZupBF() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {
