@@ -1,4 +1,4 @@
-package br.com.LeadZupBF.LeadZupBF;
+package br.com.LeadZupBF.LeadZupBF.LeadBF;
 
 import br.com.LeadZupBF.LeadZupBF.produto.Produto;
 
@@ -11,9 +11,9 @@ public class LeadZupBF {
 
 @Id
 private String email;
-@Column(nullable = false)
+
 private String nome;
-@ManyToMany
+@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 private List<Produto>produtos;
 
     public LeadZupBF() {
@@ -35,7 +35,7 @@ private List<Produto>produtos;
         this.nome = nome;
     }
 
-    public List<Produto> getProdutos() {
+    public List<Produto> getProdutos(Produto produto) {
         return produtos;
     }
 
