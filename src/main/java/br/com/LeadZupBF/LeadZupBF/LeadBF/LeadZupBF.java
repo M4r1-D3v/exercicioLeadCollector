@@ -11,7 +11,9 @@ public class LeadZupBF {
 
 @Id
 private String email;
+@Column(nullable = false)
 private String nome;
+@ManyToMany
 private List<Produto>produtos;
 
     public LeadZupBF() {
